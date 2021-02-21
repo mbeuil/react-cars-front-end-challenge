@@ -1,20 +1,46 @@
 {
-  "name": "drivy-frontend-test",
-  "version": "0.0.1",
+  "name": "rac",
+  "version": "0.1.0",
   "description": "Getaround Frontend Challenge",
-  "repository": "https://github.com/FloValence/react-cars-front-end-challenge",
-  "license": "MIT",
+  "repository": "https://github.com/mbeuil/react-cars-front-end-challenge",
   "private": true,
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "lint": "eslint --fix ."
   },
   "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@types/minimist": "^1.2.1",
+    "bootstrap": "^4.6.0",
     "express": "^4.17.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.0.9",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.1",
+    "prettier-plugin-organize-imports": "^1.1.1",
     "typescript": "^3.6.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }

@@ -1,86 +1,52 @@
 # Front-End Challenge
-This is a challenge to assert your level and way of thinking, don't spend to much time on it if you get stuck.
-Let us know how long you worked on test when sending it back.
 
-## Guidelines
+RAC is a web-app done as a technical test. It was done with :
 
-- Make sure you have `git`, `node`, and `npm` or `yarn` installed locally
-- Clone this repo (do **not** fork it)
-- Solve the levels in ascending order
-- Only do one commit per level and include the `.git` directory when submitting your test
-- To start the app:
-- run `yarn install` or `npm install`
-- run `yarn start` or `npm run start`
-- Edit files in `./src`
+> React, Typescript, emotion, eslint, prettier
+
+The state management was done through the context hook API and the design was
+inspired by [dev](https://dev.to/) and [turo](https://turo.com/)
 
 ## Pointers
 
-You can have a look at the higher levels, but please do the simplest thing that could work for the level you're currently solving.
+Key points were :
 
-We are interested in seeing code that is clean, extensible and robust, so don't overlook edge cases.
+- Do the simplest thing that could work for the level you're currently solving.
+- Clean, extensible and robust code (don't overlook edge cases).
+- Prices are stored as integers (in cents).
+- Try to handle some styling.
 
-Please also note that all prices are stored as integers (in cents). Do not forget to format them if needed.
+This test was oriented towards React and Typescript. The **/server** and a
+simple **/src** were given as well as a **package.json** :
 
-We don't expect you to be a top-notch designer, but we want to see how you would handle some styling of this app. Do not hesitate to take inspiration from Getaround or anywhere else!
-
-This test is oriented towards React and Typescript. If you want or need to add something to the setup, you'll find info on how to set it up in [Parcel's documentation](https://en.parceljs.org/recipes.html).
-
-## Sending Your Results
-
-Once you are done, please send your results to the person you are in touch with. (Remember, it should not be a fork).
-
-You can send your Github project link or zip your directory and send it via email.
-If you do not use Github, don't forget to attach your `.git` folder.
-
-Good luck!
+```
+{
+  "name": "...",
+  "version": "0.0.1",
+  "description": "...",
+  "repository": "...",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.6.4"
+  }
+}
+```
 
 ---
 
 ## Challenge
 
-We are building a car-sharing platform.
-Car owners can already list their car on our platform and backend developers have provided an API for us to query.
-
-Our plan is now to let any person (let's call them "driver") see cars they could rent.
-
-### Level 1: fetching and displaying cars
-
-For the first version of our app, we want drivers to see the cars they can rent. For every car returned by the backend, we want to display its picture, brand, model, price per day and price per km.
-
-The API is accessible with a `GET` request at `/cars.json` on your local server.
-
-### Level 2: filtering by duration and distance
-
-Unfortunately, some cars are only available for short rentals (less than a given number of days or kilometers, defined by the owner).
-
-To only see available cars, drivers should be able to input the duration of their rental and the distance they plan on driving.
-
-The different values they should be able to select are:
-
-- duration (in days): between 1 and 30
-- distance (in km): 50, 100, 150, 200, 250, 300, ... up to 3000
-
-When drivers edit these inputs, another request to the API, with `duration` and `distance` query parameters, should be made. The API will only return available cars for the given parameters in the response. _Please do not use the `availability` fields of the response, they are only here for debugging purposes._
-
-### Level 3: calculate the rental price
-
-We heard of drivers complaining about not knowing the price for their rental. Unfortunately, the backend developers forgot to add this information so we'll have to calculate it ourselves and display it.
-
-The rental price is the sum of:
-
-- A time component: the number of rental days multiplied by the car's price per day
-- A distance component: the number of km multiplied by the car's price per km
-
-Let's calculate and display this price for every car.
-
-### Level 4: degressive pricing
-
-To be as competitive as possible, we decide to have decreasing pricing for longer rentals.
-
-New rules:
-
-- price per day decreases by 10% after 1 day
-- price per day decreases by 30% after 4 days
-- price per day decreases by 50% after 10 days
-
-Adapt the rental price computation to take these new rules into account.
+- [x] lvl 1 : fetching and displaying cars.
+- [ ] lvl 2 : filtering by duration and distance.
+- [ ] lvl 3 : calculate the rental price.
+- [ ] lvl 4 : degressive pricing.

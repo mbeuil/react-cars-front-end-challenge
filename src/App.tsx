@@ -1,13 +1,22 @@
-import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap-reboot.css'
+import * as React from 'react'
+import * as S from './App.styles'
+import CarCollection from './components/car-collection'
+import Footer from './components/footer'
+import GlobalStyles from './components/global-styles'
+import Header from './components/header'
 
-const App = () => (
-  <div>
-  <h1>Hello!</h1>
-  <p>
-    Edit this file and linked JS/CSS, changes will appear directly in your
-    browser.
-  </p>
-</div>
-);
+const App = () => {
+  return (
+    <S.AppContainer>
+      <GlobalStyles />
+      <Header />
+      <S.CollectionContainer>
+        <CarCollection />
+      </S.CollectionContainer>
+      <Footer />
+    </S.AppContainer>
+  )
+}
 
-export default App;
+export default App
