@@ -35,19 +35,23 @@ function CarCollection() {
   return (
     <>
       <S.CollectionInfo>
-        {carList.length
+        {typeof carList === 'number'
+          ? 'Sorry, the wrong kind of data was sent ...'
+          : carList.length
           ? 'Book unforgettable cars from trusted hosts around the world !'
           : 'Sorry, we found no cars matching your needs ...'}
       </S.CollectionInfo>
       <S.CollectionContainer>
-        {carList.map(({id, ...otherCarItemProps}) => (
-          <CarItem
-            key={id}
-            duration={duration}
-            distance={distance}
-            {...otherCarItemProps}
-          />
-        ))}
+        {typeof carList !== 'number'
+          ? carList.map(({id, ...otherCarItemProps}) => (
+              <CarItem
+                key={id}
+                duration={duration}
+                distance={distance}
+                {...otherCarItemProps}
+              />
+            ))
+          : null}
       </S.CollectionContainer>
     </>
   )

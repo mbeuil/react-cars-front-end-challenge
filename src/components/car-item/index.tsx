@@ -1,4 +1,5 @@
 import * as React from 'react'
+import useAsync from '../../hooks/use-async'
 import * as T from '../../types/types'
 import {totalPrice} from '../../utils/number'
 import CarPriceCard from '../car-price-card'
@@ -13,12 +14,13 @@ function CarItem({
   distance,
   duration,
 }: T.CarItemProps) {
-  const [total, setTotal] = React.useState(0)
+  const {isSuccess, data, run, reset} = useAsync()
 
   React.useEffect(() => {
     if (!distance || !duration) return
-    setTotal(totalPrice(distance, duration, pricePerDay, pricePerKm))
-  }, [distance, duration])
+    run(totalPrice(distance, duration, pricePerDay, pricePerKm))
+    return () => reset()
+  }, [distance, duration, run])
 
   return (
     <S.CarItemContainer>
@@ -27,16 +29,21 @@ function CarItem({
         {brand} {model}
       </S.CarName>
 
-      {!total ? (
+      {!isSuccess ? (
         <S.CarPricesContainer>
           <CarPriceCard info="$/day" price={pricePerDay / 100} />
           <CarPriceCard info="$/km" price={pricePerKm / 100} />
         </S.CarPricesContainer>
-      ) : (
+      ) : typeof data === 'number' ? (
         <S.CarTotalContainer>
-          <CarPriceCard info="total" price={total} variant="total" />
+          <CarPriceCard
+            info="total"
+            price={data}
+            variant="total"
+            duration={duration}
+          />
         </S.CarTotalContainer>
-      )}
+      ) : null}
     </S.CarItemContainer>
   )
 }

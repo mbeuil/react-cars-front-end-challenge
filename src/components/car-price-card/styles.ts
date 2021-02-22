@@ -14,9 +14,18 @@ export const CarPriceInfo = styled.span({
 
 export const CarPricePer = styled.span(
   {
-    marginLeft: 'auto',
+    marginRight: '0px',
     marginTop: 'auto',
     color: 'var(--color-blue-primary)',
   },
   ({theme}) => (theme === 'total' ? {fontSize: '28px'} : null),
 )
+
+export const CarOldPrice = styled.div({
+  marginLeft: 'auto',
+  marginTop: 'auto',
+  color: 'var(--color-txt-secondary)',
+  fontSize: '28px',
+  marginRight: '10px',
+  textDecoration: 'line-through',
+})

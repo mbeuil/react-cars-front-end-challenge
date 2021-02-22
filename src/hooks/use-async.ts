@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as T from '../types/types'
 
-type DataProps = T.CarItemProps[]
+type DataProps = T.CarItemProps[] | number
 
 type InitialStateProps = {
   status: string
@@ -12,6 +12,7 @@ type ActionType =
   | {type: 'START'}
   | {type: 'SUCCESS'; data: DataProps}
   | {type: 'ERROR'; error: Error}
+  | {type: 'RESET'}
 
 const initialState: InitialStateProps = {
   status: 'idle',
@@ -30,6 +31,9 @@ const asyncReducer = (state: InitialStateProps, action: ActionType) => {
     case 'ERROR': {
       return {...state, status: 'rejected', error: action.error.message}
     }
+    case 'RESET': {
+      return {...state, initialState}
+    }
     default: {
       throw new Error(`Unhandled action type`)
     }
@@ -41,6 +45,8 @@ function useAsync() {
     asyncReducer,
     initialState,
   )
+
+  const reset = () => dispatch({type: 'RESET'})
 
   const run = React.useCallback(
     promise => {
@@ -65,6 +71,7 @@ function useAsync() {
     data,
     error,
     run,
+    reset,
   }
 }
 
