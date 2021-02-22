@@ -17,3 +17,9 @@ export const darkSubText = '#8D949B'
 export const lightSubText = '#64707d'
 
 export const red = '#cf404d'
+
+export const buttonDarkColor = '#444f5b'
+export const buttonLightColor = '#b5bdc4'
+
+export const inputDarkColor = '#2e3a48'
+export const inputLightColor = '#b5bdc4'

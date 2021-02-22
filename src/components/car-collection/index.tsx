@@ -1,6 +1,7 @@
 import * as React from 'react'
+import {useSearchParams} from '../../context/searchParams-context'
+import {useTheme} from '../../context/theme-context'
 import useAsync from '../../hooks/use-async'
-import {useTheme} from '../../hooks/use-theme'
 import {LoadingSpinner} from '../../styles/common-styles'
 import {client} from '../../utils/api-client'
 import CarItem from '../car-item'
@@ -8,11 +9,12 @@ import * as S from './styles'
 
 function CarCollection() {
   const {isIdle, isLoading, isError, data: carList, error, run} = useAsync()
+  const {duration, distance} = useSearchParams()
   const {dark} = useTheme()
 
   React.useEffect(() => {
-    run(client('cars.json'))
-  }, [run])
+    run(client(`cars.json?duration=${duration}&distance=${distance}`))
+  }, [duration, distance])
 
   if (isIdle || isLoading) {
     return (
@@ -35,7 +37,9 @@ function CarCollection() {
   return (
     <>
       <S.CollectionInfo theme={dark}>
-        Book unforgettable cars from trusted hosts around the world
+        {carList.length
+          ? 'Book unforgettable cars from trusted hosts around the world !'
+          : 'Sorry, we found no cars matching your needs ...'}
       </S.CollectionInfo>
       <S.CollectionContainer>
         {carList.map(({id, ...otherCarItemProps}) => (

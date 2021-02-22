@@ -1,6 +1,6 @@
 import {Global} from '@emotion/react'
 import * as React from 'react'
-import {useTheme} from '../../hooks/use-theme'
+import {useTheme} from '../../context/theme-context'
 import * as C from '../../styles/colors'
 
 function GlobalStyles() {

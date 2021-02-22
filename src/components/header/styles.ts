@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import * as C from '../../styles/colors'
+import * as M from '../../styles/media-queries'
 
 export const HeaderContainer = styled.div(
   {
@@ -11,6 +12,10 @@ export const HeaderContainer = styled.div(
     left: '0',
     right: '0',
     zIndex: 2,
+
+    [M.small]: {
+      padding: '0 6px',
+    },
   },
   ({theme}) =>
     theme

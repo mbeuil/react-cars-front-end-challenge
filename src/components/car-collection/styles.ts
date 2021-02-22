@@ -5,19 +5,23 @@ import * as M from '../../styles/media-queries'
 
 export const CollectionContainer = styled.li({
   margin: '0px 16px',
-  padding: '20px 10px',
+  padding: '20px 0px',
   listStyle: 'none',
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr',
   gridGap: '1em',
+
+  [M.large]: {
+    margin: '0px',
+  },
 
   [M.medium]: {
     gridTemplateColumns: '1fr 1fr',
   },
 
   [M.small]: {
+    margin: '0px 6px',
     gridTemplateColumns: '1fr',
-    padding: '20px 0px',
   },
 })
 

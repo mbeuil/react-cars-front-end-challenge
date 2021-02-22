@@ -3,20 +3,20 @@ import {BiMoon, BiSun} from 'react-icons/bi'
 import * as C from '../../styles/colors'
 
 export const SunIcon = styled(BiSun)({
-  height: '40px',
-  width: '40px',
+  height: '30px',
+  width: '30px',
   color: C.darkPrimary,
   alignSelf: 'center',
 })
 export const MoonIcon = styled(BiMoon)({
-  height: '40px',
-  width: '40px',
+  height: '30px',
+  width: '30px',
   color: C.lightPrimary,
   alignSelf: 'center',
 })
 
 export const IconButton = styled.button({
-  height: '40px',
+  margin: '4px auto',
   border: 'none',
   backgroundColor: 'initial',
   marginLeft: 'auto',

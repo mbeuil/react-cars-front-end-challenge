@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import * as M from './styles/media-queries'
 
 export const AppContainer = styled.div({
-  maxWidth: '1000px',
+  maxWidth: '1100px',
   margin: '0 auto 0 auto',
   display: 'flex',
   flexDirection: 'column',

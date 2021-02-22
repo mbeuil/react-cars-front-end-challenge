@@ -1,14 +1,16 @@
 import * as React from 'react'
-import {useTheme} from '../../hooks/use-theme'
+import {useTheme} from '../../context/theme-context'
 import * as S from './styles'
 
 function ThemeToggler() {
   const {dark, setDark} = useTheme()
 
   return (
-    <S.IconButton onClick={() => setDark(() => !dark)}>
-      {dark ? <S.SunIcon /> : <S.MoonIcon />}
-    </S.IconButton>
+    <div>
+      <S.IconButton theme={dark} onClick={() => setDark(() => !dark)}>
+        {dark ? <S.SunIcon /> : <S.MoonIcon />}
+      </S.IconButton>
+    </div>
   )
 }
 

@@ -47,6 +47,6 @@ simple **/src** were given as well as a **package.json** :
 ## Challenge
 
 - [x] lvl 1 : fetching and displaying cars.
-- [ ] lvl 2 : filtering by duration and distance.
+- [x] lvl 2 : filtering by duration and distance.
 - [ ] lvl 3 : calculate the rental price.
 - [ ] lvl 4 : degressive pricing.

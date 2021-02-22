@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useTheme} from '../../hooks/use-theme'
+import {useTheme} from '../../context/theme-context'
 import * as S from './styles'
 
 function Footer() {

@@ -1,6 +1,5 @@
-/**@jsx jsx */
-import {jsx} from '@emotion/react'
-import {useTheme} from '../../hooks/use-theme'
+import * as React from 'react'
+import {useTheme} from '../../context/theme-context'
 import * as T from '../../types/types'
 import * as S from './styles'
 
@@ -33,4 +32,4 @@ function CarItem({
   )
 }
 
-export default CarItem
+export default React.memo(CarItem)
