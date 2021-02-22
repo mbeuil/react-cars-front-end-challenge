@@ -1,11 +1,10 @@
 import * as React from 'react'
-import {useTheme} from '../../context/theme-context'
+import {ThemeProvider} from '../../context/theme-context'
 import ThemeToggler from '../theme-toggler'
 import ButtonVariant from '../variant-button'
 import * as S from './styles'
 
 function StickyBottomButton() {
-  const {dark} = useTheme()
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -14,14 +13,16 @@ function StickyBottomButton() {
   }
 
   return (
-    <S.ButtonContainer theme={dark}>
+    <S.ButtonContainer>
       <ButtonVariant
         variant="mode"
         type="button"
         handleClick={scrollToTop}
         icon="top"
       />
-      <ThemeToggler />
+      <ThemeProvider>
+        <ThemeToggler />
+      </ThemeProvider>
     </S.ButtonContainer>
   )
 }

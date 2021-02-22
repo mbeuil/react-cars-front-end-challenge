@@ -7,7 +7,7 @@ function ThemeToggler() {
 
   return (
     <div>
-      <S.IconButton theme={dark} onClick={() => setDark(() => !dark)}>
+      <S.IconButton onClick={() => setDark(() => !dark)}>
         {dark ? <S.SunIcon /> : <S.MoonIcon />}
       </S.IconButton>
     </div>

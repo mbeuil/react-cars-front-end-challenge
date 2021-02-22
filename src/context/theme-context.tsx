@@ -30,6 +30,12 @@ function ThemeProvider({...props}) {
 
   React.useEffect(() => {
     window.localStorage.setItem('isDark', JSON.stringify(dark))
+
+    if (dark) {
+      window.document.body.classList.add('dark')
+    } else {
+      window.document.body.classList.remove('dark')
+    }
   }, [dark])
 
   return <ThemeContext.Provider value={{dark, setDark}} {...props} />

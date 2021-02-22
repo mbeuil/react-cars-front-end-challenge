@@ -1,5 +1,4 @@
 import * as React from 'react'
-import {useTheme} from '../../context/theme-context'
 import useWitdh from '../../hooks/use-width'
 import * as S from './styles'
 
@@ -16,26 +15,25 @@ function ButtonVariant({
   type = 'submit',
   handleClick,
 }: ButtonVariantProps) {
-  const {dark} = useTheme()
   const {width} = useWitdh()
 
   return (
     <S.ButtonContainer
-      theme={`${variant} ${dark}`}
+      theme={variant}
       type={type}
       value="Submit"
       onClick={handleClick}
     >
       {icon === 'search' && width > 700 ? (
-        <S.Button theme={`${variant} ${dark}`}>search</S.Button>
+        <S.Button theme={variant}>search</S.Button>
       ) : icon === 'search' && width < 700 ? (
-        <S.SearchIcon theme={`${variant} ${dark}`} />
+        <S.SearchIcon theme={variant} />
       ) : icon === 'reset' ? (
-        <S.ResetIcon theme={`${variant} ${dark}`} />
+        <S.ResetIcon theme={variant} />
       ) : icon === 'top' ? (
-        <S.TopIcon theme={`${variant} ${dark}`} />
+        <S.TopIcon theme={variant} />
       ) : (
-        <S.Button theme={`${variant} ${dark}`}>{icon}</S.Button>
+        <S.Button theme={variant}>{icon}</S.Button>
       )}
     </S.ButtonContainer>
   )

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import * as C from '../../styles/colors'
 import * as M from '../../styles/media-queries'
 
 export const SelectContainer = styled.div({
@@ -19,21 +18,10 @@ export const SelectLabel = styled.label({
   marginBottom: '0px',
 })
 
-export const SelectInput = styled.select(
-  {
-    borderRadius: '5px',
-    border: '0',
-  },
-  ({theme}) =>
-    theme
-      ? {
-          color: C.darkSubText,
-          backgroundColor: C.inputDarkColor,
-          boxShadow: '0 0 0 1px rgb(181,180,186,.25)',
-        }
-      : {
-          color: C.lightSubText,
-          backgroundColor: C.menuLightBackground,
-          boxShadow: '0 0 0 1px rgb(8 9 10 / 10%)',
-        },
-)
+export const SelectInput = styled.select({
+  borderRadius: '5px',
+  border: '0',
+  color: 'var(--color-txt-secondary)',
+  backgroundColor: 'var(--color-ip-primary)',
+  boxShadow: '0 0 0 1px var(--color-bs-primary)',
+})

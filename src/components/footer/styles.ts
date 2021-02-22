@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import * as C from '../../styles/colors'
 
 export const FooterContainer = styled.div({
   display: 'flex',
@@ -7,16 +6,12 @@ export const FooterContainer = styled.div({
   alignSelf: 'center',
 })
 
-export const FooterInfo = styled.p(
-  {
-    fontSize: '14px',
-  },
-  ({theme}) => (theme ? {color: C.darkSubText} : {color: C.lightSubText}),
-)
-export const FooterLink = styled.a(
-  {
-    fontSize: '14px',
-    paddingLeft: '5px',
-  },
-  ({theme}) => (theme ? {color: C.darkNeonBlue} : {color: C.lightNeonBlue}),
-)
+export const FooterInfo = styled.p({
+  fontSize: '14px',
+  color: 'var(--color-txt-secondary)',
+})
+export const FooterLink = styled.a({
+  fontSize: '14px',
+  paddingLeft: '5px',
+  color: 'var(--color-blue-primary)',
+})

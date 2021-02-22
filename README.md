@@ -48,5 +48,5 @@ simple **/src** were given as well as a **package.json** :
 
 - [x] lvl 1 : fetching and displaying cars.
 - [x] lvl 2 : filtering by duration and distance.
-- [ ] lvl 3 : calculate the rental price.
+- [x] lvl 3 : calculate the rental price.
 - [ ] lvl 4 : degressive pricing.

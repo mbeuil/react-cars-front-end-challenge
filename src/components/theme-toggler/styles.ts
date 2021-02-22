@@ -1,17 +1,16 @@
 import styled from '@emotion/styled'
 import {BiMoon, BiSun} from 'react-icons/bi'
-import * as C from '../../styles/colors'
 
 export const SunIcon = styled(BiSun)({
   height: '30px',
   width: '30px',
-  color: C.darkPrimary,
+  color: 'var(--color-txt-primary)',
   alignSelf: 'center',
 })
 export const MoonIcon = styled(BiMoon)({
   height: '30px',
   width: '30px',
-  color: C.lightPrimary,
+  color: 'var(--color-txt-primary)',
   alignSelf: 'center',
 })
 

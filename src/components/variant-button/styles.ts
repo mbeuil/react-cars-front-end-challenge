@@ -2,7 +2,6 @@ import {Theme} from '@emotion/react'
 import styled from '@emotion/styled'
 import {BiReset, BiSearchAlt} from 'react-icons/bi'
 import {TiArrowSortedUp} from 'react-icons/ti'
-import * as C from '../../styles/colors'
 
 export const ButtonContainer = styled.button(
   {
@@ -14,11 +13,9 @@ export const ButtonContainer = styled.button(
     padding: 'auto',
   },
   ({theme}) =>
-    theme === 'primary true'
-      ? {background: C.darkNeonBlue}
-      : theme === 'primary false'
-      ? {background: C.lightNeonBlue}
-      : {background: 'inherit'},
+    theme === 'primary'
+      ? {backgroundColor: 'var(--color-blue-primary)'}
+      : {backgroundColor: 'inherit'},
 )
 const iconTemplate = {
   height: '25px',
@@ -27,21 +24,13 @@ const iconTemplate = {
 }
 
 function propsTemplate(theme: Theme) {
-  return theme === 'primary true'
-    ? {color: C.menuDarkBackground}
-    : theme === 'primary false'
-    ? {color: C.menuLightBackground}
-    : theme === 'secondary true'
-    ? {color: C.darkSubText}
-    : theme === 'secondary false'
-    ? {color: C.lightSubText}
-    : theme === 'mode true'
-    ? {color: C.darkPrimary}
-    : theme === 'mode false'
-    ? {color: C.lightPrimary}
-    : theme === ' true'
-    ? {color: C.menuDarkBackground}
-    : {color: C.menuLightBackground}
+  return theme === 'primary'
+    ? {color: 'var(--color-bg-tertiary)'}
+    : theme === 'secondary'
+    ? {color: 'var(--color-txt-secondary)'}
+    : theme === 'mode'
+    ? {color: 'var(--color-txt-primary)'}
+    : {color: 'var(--color-bg-tertiary)'}
 }
 
 export const SearchIcon = styled(BiSearchAlt)(iconTemplate, ({theme}) =>

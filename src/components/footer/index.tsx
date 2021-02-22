@@ -1,13 +1,11 @@
 import * as React from 'react'
-import {useTheme} from '../../context/theme-context'
 import * as S from './styles'
 
 function Footer() {
-  const {dark} = useTheme()
   return (
     <S.FooterContainer>
-      <S.FooterInfo theme={dark}>Rent A Car app by </S.FooterInfo>
-      <S.FooterLink theme={dark} href="https://www.linkedin.com/in/mbeuil/">
+      <S.FooterInfo>Rent A Car app by </S.FooterInfo>
+      <S.FooterLink href="https://www.linkedin.com/in/mbeuil/">
         MBEUIL
       </S.FooterLink>
     </S.FooterContainer>

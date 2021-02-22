@@ -1,16 +1,14 @@
 import * as React from 'react'
 import {useSearchDispatch} from '../../context/searchParams-context'
-import {useTheme} from '../../context/theme-context'
 import {optionArray} from '../../utils/array'
 import SelectForm from '../select-form'
 import ButtonVariant from '../variant-button'
 import * as S from './styles'
 
 function CollectionForm() {
-  const [day, setDay] = React.useState('1')
+  const [day, setDay] = React.useState('30')
   const [km, setKm] = React.useState('3000')
   const {setSearch, resetSearch} = useSearchDispatch()
-  const {dark} = useTheme()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -22,7 +20,7 @@ function CollectionForm() {
     setKm(e.target.value)
 
   return (
-    <S.FormContainer theme={dark} onSubmit={handleSubmit}>
+    <S.FormContainer onSubmit={handleSubmit}>
       <SelectForm
         data="Day"
         value={day}

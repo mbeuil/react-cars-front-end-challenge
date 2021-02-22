@@ -4,6 +4,8 @@
 
 export interface CarItemProps {
   id?: number
+  distance?: string
+  duration?: string
   picturePath: string
   brand: string
   model: string

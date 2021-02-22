@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import {RiErrorWarningLine} from 'react-icons/ri'
-import * as C from '../../styles/colors'
 import * as M from '../../styles/media-queries'
 
 export const CollectionContainer = styled.li({
@@ -25,13 +24,11 @@ export const CollectionContainer = styled.li({
   },
 })
 
-export const CollectionInfo = styled.span(
-  {
-    padding: '20px 16px 0px 16px',
-    textAlign: 'justify',
-  },
-  ({theme}) => (theme ? {color: C.darkPrimary} : {color: C.lightPrimary}),
-)
+export const CollectionInfo = styled.span({
+  padding: '20px 16px 0px 16px',
+  textAlign: 'justify',
+  color: 'var(--color-txt-primary)',
+})
 
 export const SpinnerContainer = styled.div({
   display: 'flex',
@@ -41,35 +38,26 @@ export const SpinnerContainer = styled.div({
   margin: '20px',
 })
 
-export const ErrorContainer = styled.div(
-  {
-    width: '100%',
-    color: C.red,
-    margin: '20px',
-    padding: '20px',
-    border: '1px solid rgba(181,180,186,.25)',
-    borderRadius: '5px',
-    [M.medium]: {
-      maxWidth: '700px',
-    },
+export const ErrorContainer = styled.div({
+  width: '100%',
+  color: 'var(--color-red-primary)',
+  margin: '20px',
+  padding: '20px',
+  border: '1px solid rgba(181,180,186,.25)',
+  borderRadius: '5px',
+  backgroundColor: 'var(--color-bg-secondary)',
+  boxShadow: '0 0 0 1px var(--color=bs-primary)',
 
-    [M.small]: {
-      borderRight: '0px',
-      borderLeft: '0px',
-      borderRadius: '0px',
-    },
+  [M.medium]: {
+    maxWidth: '700px',
   },
-  ({theme}) =>
-    theme
-      ? {
-          backgroundColor: C.cardDarkBackground,
-          boxShadow: '0 0 0 1px rgb(181,180,186,.25)',
-        }
-      : {
-          backgroundColor: C.cardLightBackground,
-          boxShadow: '0 0 0 1px rgb(8 9 10 / 10%)',
-        },
-)
+
+  [M.small]: {
+    borderRight: '0px',
+    borderLeft: '0px',
+    borderRadius: '0px',
+  },
+})
 
 export const ErrorAlertBox = styled.div({
   display: 'grid',
@@ -80,5 +68,5 @@ export const ErrorAlertBox = styled.div({
 export const Icon = styled(RiErrorWarningLine)({
   height: '24px',
   width: '24px',
-  color: C.red,
+  color: 'var(--colr-red-primary)',
 })
