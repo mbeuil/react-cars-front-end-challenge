@@ -34,21 +34,6 @@ export const CarPricesContainer = styled.div({
   flexDirection: 'column',
 })
 
-export const CarPricesCard = styled.div({
-  display: 'grid',
-  gridTemplateColumns: 'auto auto',
-})
-
-export const CarPriceInfo = styled.span({
-  textAlign: 'start',
-  color: 'var(--color-txt-secondary)',
-})
-
-export const CarPricePer = styled.span({
-  textAlign: 'end',
-  color: 'var(--color-blue-primary)',
-})
-
 export const CarTotalContainer = styled.div({
   margin: '16px 16px 0px',
   borderTop: '1px solid var(--color-bs-primary)',
@@ -56,17 +41,4 @@ export const CarTotalContainer = styled.div({
   display: 'flex',
   flexDirection: 'row',
   height: '80px',
-})
-
-export const CarTotalInfo = styled.span({
-  marginTop: 'auto',
-  textAlign: 'start',
-  color: 'var(--color-txt-secondary)',
-})
-
-export const CarPriceTotal = styled.span({
-  fontSize: '28px',
-  marginLeft: 'auto',
-  marginTop: 'auto',
-  color: 'var(--color-blue-primary)',
 })

@@ -19,8 +19,6 @@ function CarPriceCard({
     totalPrice: price,
     fullPrice: 0,
   })
-  console.log('here')
-  console.log(totalPrice, fullPrice)
 
   React.useEffect(() => {
     setPrices(salePrice(price, duration))
